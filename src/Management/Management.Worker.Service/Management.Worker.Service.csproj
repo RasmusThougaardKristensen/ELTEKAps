@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Handlers\**" />
+    <Compile Remove="SignalR\**" />
+    <Content Remove="Handlers\**" />
+    <Content Remove="SignalR\**" />
+    <EmbeddedResource Remove="Handlers\**" />
+    <EmbeddedResource Remove="SignalR\**" />
+    <None Remove="Handlers\**" />
+    <None Remove="SignalR\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.2.0" />
+    <PackageReference Include="Rebus" Version="8.4.3" />
+    <PackageReference Include="Rebus.AzureServiceBus" Version="10.2.0" />
+    <PackageReference Include="Rebus.Microsoft.Extensions.Logging" Version="5.0.0" />
+    <PackageReference Include="Rebus.ServiceProvider" Version="10.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Management.ApplicationServices\Management.ApplicationServices.csproj" />
+    <ProjectReference Include="..\Management.Domain\Management.Domain.csproj" />
+    <ProjectReference Include="..\Management.Infrastructure\Management.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
